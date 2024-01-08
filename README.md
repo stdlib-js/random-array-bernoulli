@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/random-array-bernoulli/tags). For example,
+
+```javascript
 import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@v0.1.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@v0.1.0-esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@esm/index.mjs';
 ```
 
 #### bernoulli( len, p\[, options] )
@@ -341,7 +346,7 @@ var sz = random.byteLength;
 <script type="module">
 
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@v0.1.0-esm/index.mjs';
+import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@esm/index.mjs';
 
 // Create a function for generating random arrays originating from the same state:
 var random = bernoulli.factory( 0.5, {
