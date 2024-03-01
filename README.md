@@ -35,25 +35,32 @@ limitations under the License.
 
 > Create an array containing pseudorandom numbers drawn from a [Bernoulli][@stdlib/random/base/bernoulli] distribution.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-array-bernoulli
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@deno/mod.js';
-```
-The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/random-array-bernoulli/tags). For example,
-
-```javascript
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@v0.2.1-deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@deno/mod.js';
+var bernoulli = require( '@stdlib/random-array-bernoulli' );
 ```
 
 #### bernoulli( len, p\[, options] )
@@ -91,7 +98,7 @@ var out = bernoulli( 10, 0.5, opts );
 Fills an array with pseudorandom numbers drawn from a [Bernoulli][@stdlib/random/base/bernoulli] distribution.
 
 ```javascript
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
+var zeros = require( '@stdlib/array-zeros' );
 
 var x = zeros( 10, 'float64' );
 // returns <Float64Array>
@@ -157,7 +164,7 @@ The function accepts the following `options`:
 To use a custom PRNG as the underlying source of uniformly distributed pseudorandom numbers, set the `prng` option.
 
 ```javascript
-import minstd from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd@deno/mod.js';
+var minstd = require( '@stdlib/random-base-minstd' );
 
 var opts = {
     'prng': minstd.normalized
@@ -220,7 +227,7 @@ var seed = bernoulli.seed;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = bernoulli.factory( 0.5, {
     'prng': minstd
@@ -242,7 +249,7 @@ var len = bernoulli.seedLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = bernoulli.factory( 0.5, {
     'prng': minstd
@@ -264,7 +271,7 @@ var state = bernoulli.state;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = bernoulli.factory( 0.5, {
     'prng': minstd
@@ -286,7 +293,7 @@ var len = bernoulli.stateLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = bernoulli.factory( 0.5, {
     'prng': minstd
@@ -308,7 +315,7 @@ var sz = bernoulli.byteLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = bernoulli.factory( 0.5, {
     'prng': minstd
@@ -340,8 +347,8 @@ var sz = random.byteLength;
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@deno/mod.js';
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@deno/mod.js';
+var logEach = require( '@stdlib/console-log-each' );
+var bernoulli = require( '@stdlib/random-array-bernoulli' );
 
 // Create a function for generating random arrays originating from the same state:
 var random = bernoulli.factory( 0.5, {
@@ -397,7 +404,7 @@ logEach( '%f', x4 );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -427,8 +434,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/random-array-bernoulli.svg
 [npm-url]: https://npmjs.org/package/@stdlib/random-array-bernoulli
 
-[test-image]: https://github.com/stdlib-js/random-array-bernoulli/actions/workflows/test.yml/badge.svg?branch=v0.2.1
-[test-url]: https://github.com/stdlib-js/random-array-bernoulli/actions/workflows/test.yml?query=branch:v0.2.1
+[test-image]: https://github.com/stdlib-js/random-array-bernoulli/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/random-array-bernoulli/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/random-array-bernoulli/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/random-array-bernoulli?branch=main
@@ -460,13 +467,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/random-array-bernoulli/main/LICENSE
 
-[@stdlib/random/base/bernoulli]: https://github.com/stdlib-js/random-base-bernoulli/tree/deno
+[@stdlib/random/base/bernoulli]: https://github.com/stdlib-js/random-base-bernoulli
 
-[@stdlib/array/typed-real-dtypes]: https://github.com/stdlib-js/array-typed-real-dtypes/tree/deno
+[@stdlib/array/typed-real-dtypes]: https://github.com/stdlib-js/array-typed-real-dtypes
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/deno
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/deno
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 </section>
 
