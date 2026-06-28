@@ -1,7 +1,7 @@
-"use strict";var a=function(v,r){return function(){return r||v((r={exports:{}}).exports,r),r.exports}};var e=a(function(g,t){
-var c=require('@stdlib/random-array-tools-unary-factory/dist'),o=require('@stdlib/array-dtypes/dist'),y=require('@stdlib/array-defaults/dist'),q=require('@stdlib/random-base-bernoulli/dist'),l=o("real_and_generic"),n=c(q,l,y.get("dtypes.real"));t.exports=n
-});var s=a(function(_,i){
-var d=e(),f=d();i.exports=f
-});var p=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),u=s(),x=e();p(u,"factory",x);module.exports=u;
+"use strict";var a=function(v,r){return function(){try{return r||v((r={exports:{}}).exports,r),r.exports}catch(c){throw (r=0, c)}};};var e=a(function(_,t){
+var o=require('@stdlib/random-array-tools-unary-factory/dist'),y=require('@stdlib/array-dtypes/dist'),q=require('@stdlib/array-defaults/dist'),l=require('@stdlib/random-base-bernoulli/dist'),n=y("real_and_generic"),d=o(l,n,q.get("dtypes.real"));t.exports=d
+});var s=a(function(m,i){
+var f=e(),p=f();i.exports=p
+});var x=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),u=s(),b=e();x(u,"factory",b);module.exports=u;
 /** @license Apache-2.0 */
 //# sourceMappingURL=index.js.map
